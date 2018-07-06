@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "APIManager.h"
+#import "User.h"
 
 @protocol ComposeViewControllerDelegate
 
@@ -17,6 +18,11 @@
 
 @interface ComposeViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextView *tweetField;
+@property (weak, nonatomic) IBOutlet UIImageView *profile;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *screenname;
+
+@property (strong, nonatomic) User *user;
 
 @property (nonatomic, weak) id<ComposeViewControllerDelegate> delegate;
 

@@ -8,6 +8,8 @@
 
 #import "ComposeViewController.h"
 #import "APIManager.h"
+#import "User.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface ComposeViewController ()
 
@@ -18,6 +20,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    // [self setComposeView:_user];
+    [[APIManager shared] getUser:^( NSDictionary *user, NSError *error) {
+        NSLog(@"something");
+        if(user){
+            self.user = (User *)user;
+            [self.profile setImageWithURL:[NSURL URLWithString:user[@"profile_image_url_https"]]];
+            self.nameLabel.text = user[@"name"];
+            self.screenname.text = [@"@" stringByAppendingString:user[@"screen_name"]];
+        }
+        else{
+            NSLog(@"ERROR PROCESSING USER INFO IN COMPOSE");
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

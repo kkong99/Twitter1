@@ -20,8 +20,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *reply;
 @property (weak, nonatomic) IBOutlet UIButton *retweet;
 @property (weak, nonatomic) IBOutlet UIButton *love;
-@property (weak, nonatomic) IBOutlet UIButton *message;
-
 
 @property (strong, nonatomic) Tweet *tweet;
 
