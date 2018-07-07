@@ -82,8 +82,15 @@
     NSMutableArray *tempTweet = [NSMutableArray arrayWithArray: _tweetArray];
     [tempTweet addObject:tweet];
     _tweetArray = tempTweet;
-    [self.tableView reloadData];
-    
+    [[APIManager shared] getHomeTimelineWithCompletion:^(NSArray *tweets, NSError *error) {
+        if (tweets) {
+            NSLog(@"😎😎😎 Successfully loaded home timeline");
+            self.tweetArray = tweets;
+            [self.tableView reloadData];
+        } else {
+            NSLog(@"😫😫😫 Error getting home timeline: %@", error.localizedDescription);
+        }
+    }];
 }
 
 #pragma mark - Navigation
@@ -97,7 +104,6 @@
     ComposeViewController *composeController = (ComposeViewController *)navigationController.topViewController;
     composeController.delegate = self;
 }
-
 
 
 - (IBAction)didTapLogout:(id)sender {
