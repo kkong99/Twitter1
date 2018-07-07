@@ -52,7 +52,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented user stories:
+Here's a walkthrough of implemented user stories: The walkthrough is in the git repo entitled Twitter.gif
 
 <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
@@ -60,7 +60,8 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Describe any challenges encountered while building the app. 
+- I had a lot of trouble at the start of the project. I hit road blocks with the table view and understanding the APIManager functions and implementing them. 
 
 ### Starter project
 The starter project can be found in the `starter-project` tag. Download and run `pod install`.
